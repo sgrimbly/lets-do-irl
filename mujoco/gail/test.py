@@ -5,7 +5,7 @@ import argparse
 
 from model import Actor, Critic
 from utils.utils import get_action
-from utils.running_state import ZFilter
+from utils.zfilter import ZFilter
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--env', type=str, default="Hopper-v2",
