@@ -6,6 +6,7 @@ import numpy as np
 from collections import deque
 
 import torch
+torch.autograd.set_detect_anomaly(True)
 import torch.optim as optim
 from tensorboardX import SummaryWriter 
 
@@ -156,8 +157,8 @@ def main():
         if train_discrim_flag:
             expert_acc, learner_acc = train_vdb(vdb, memory, vdb_optim, demonstrations, 0, args)
             print("Expert: %.2f%% | Learner: %.2f%%" % (expert_acc * 100, learner_acc * 100))
-            if expert_acc > args.suspend_accu_exp and learner_acc > args.suspend_accu_gen:
-                train_discrim_flag = False
+            # if expert_acc > args.suspend_accu_exp and learner_acc > args.suspend_accu_gen:
+            #     train_discrim_flag = False
         train_actor_critic(actor, critic, memory, actor_optim, critic_optim, args)
 
         if iter % 100:

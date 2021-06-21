@@ -1,9 +1,8 @@
-# Model Checkpoints
-mujoco/gail/save_model
-
 # Cache
-mujoco/gail/utils/__pycache__/
-mujoco/gail/__pycache__/
+mujoco/gail/utils/__pycache__
+mujoco/vail/utils/__pycache__
+mujoco/gail/__pycache__
+mujoco/vail/__pycache__
 
 # VS Code Files
 .vscode/settings.json

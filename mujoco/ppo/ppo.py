@@ -53,11 +53,12 @@ def train_model(actor, critic, memory, actor_optim, critic_optim, args):
             loss = actor_loss + 0.5 * critic_loss
 
             critic_optim.zero_grad()
-            loss.backward(retain_graph=True) 
-            critic_optim.step()
-
             actor_optim.zero_grad()
+            
+            loss.backward(retain_graph=True) 
             loss.backward()
+            
+            critic_optim.step()
             actor_optim.step()
 
 def get_gae(rewards, masks, values, args):
