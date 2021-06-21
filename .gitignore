@@ -1,0 +1,12 @@
+# Model Checkpoints
+mujoco/gail/save_model
+
+# Cache
+mujoco/gail/utils/__pycache__/
+mujoco/gail/__pycache__/
+
+# VS Code Files
+.vscode/settings.json
+
+# Logs
+mujoco/gail/logs/
