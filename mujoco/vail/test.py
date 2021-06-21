@@ -59,7 +59,7 @@ if __name__ == "__main__":
         score = 0
         for _ in range(10000):
             env.render()
-            mu, std, _ = actor(torch.Tensor(state).unsqueeze(0))
+            mu, std = actor(torch.Tensor(state).unsqueeze(0))
             action = get_action(mu, std)[0]
 
             next_state, reward, done, _ = env.step(action)
